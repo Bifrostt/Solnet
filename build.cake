@@ -64,7 +64,7 @@ Task("Test")
             NoRestore = true,
             Configuration = configuration,
             NoBuild = true,
-            ArgumentCustomization = args => args.Append($"--logger trx --collect:"XPlat Code Coverage"")
+            ArgumentCustomization = args => args.Append($"--logger trx /p:CoverletOutput=./code_coverage/")
         };
 
         DotNetCoreTest(testProjectsRelativePaths[0], testSettings, coverletSettings);
