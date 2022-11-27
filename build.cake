@@ -56,7 +56,6 @@ Task("Test")
             CollectCoverage = true,
             CoverletOutputFormat = CoverletOutputFormat.json,
             CoverletOutputDirectory = coverageFolder,
-            CoverletOutput = coverageFolder,
             CoverletOutputName = coberturaFileName
         };
 
@@ -65,7 +64,7 @@ Task("Test")
             NoRestore = true,
             Configuration = configuration,
             NoBuild = true,
-            ArgumentCustomization = args => args.Append($"--logger trx")
+            ArgumentCustomization = args => args.Append($"--logger trx --collect:"XPlat Code Coverage"")
         };
 
         DotNetCoreTest(testProjectsRelativePaths[0], testSettings, coverletSettings);
