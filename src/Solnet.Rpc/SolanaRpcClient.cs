@@ -14,7 +14,6 @@ using System.Threading.Tasks;
 
 namespace Solnet.Rpc
 {
-    //
     /// <summary>
     /// Implements functionality to interact with the Solana JSON RPC API.
     /// </summary>
