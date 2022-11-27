@@ -64,7 +64,7 @@ Task("Test")
             NoRestore = true,
             Configuration = configuration,
             NoBuild = true,
-            ArgumentCustomization = args => args.Append($"--logger trx /p:CoverletOutput=./code_coverage/")
+            ArgumentCustomization = args => args.Append($"--logger trx /p:CollectCoverage=true /p:CoverletOutput='./code_coverage/result.json'")
         };
 
         DotNetCoreTest(testProjectsRelativePaths[0], testSettings, coverletSettings);
