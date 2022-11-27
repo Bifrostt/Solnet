@@ -20,7 +20,7 @@ var reportTypes = "HtmlInline";
 var coverageFolder = "./code_coverage";
 
 var coberturaFileName = "results";
-var coverageFilePath = Directory(coverageFolder) + File(coberturaFileName + ".json");
+var coverageFilePath = Directory(coverageFolder) + File(coberturaFileName + ".info");
 var jsonFilePath = Directory(coverageFolder) + File(coberturaFileName + ".json");
 var packagesDir = artifactsDir.Combine(Directory("packages"));
 
@@ -56,6 +56,7 @@ Task("Test")
             CollectCoverage = true,
             CoverletOutputFormat = CoverletOutputFormat.json,
             CoverletOutputDirectory = coverageFolder,
+            CoverletOutput = coverageFolder,
             CoverletOutputName = coberturaFileName
         };
 
