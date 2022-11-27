@@ -54,6 +54,7 @@ Task("Test")
     
         var coverletSettings = new CoverletSettings {
             CollectCoverage = true,
+            CoverletOutputFormat = CoverletOutputFormat.Json,
             CoverletOutputDirectory = coverageFolder,
             CoverletOutputName = coberturaFileName
         };
